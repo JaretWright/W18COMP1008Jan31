@@ -1,5 +1,6 @@
 package w18comp1008s3jan31;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -44,5 +45,32 @@ public class DeckOfCards {
     public void shuffle()
     {
         Collections.shuffle(cards);
+    }
+    
+    /**
+     * This method will choose and return a random card from the deck
+     */
+    public Card getRandomCard()
+    {
+        SecureRandom rng = new SecureRandom();
+        return cards.remove(rng.nextInt(cards.size()));
+    }
+    
+    /**
+     * This method will return the top card from 
+     * the deck
+     */
+    public Card dealTopCard()
+    {
+        return cards.remove(0);
+    }
+    
+    /**
+     * This method returns the number of cards currently in the
+     * deck
+     */
+    public int getNumberOfCardsInDeck()
+    {
+        return cards.size();
     }
 }

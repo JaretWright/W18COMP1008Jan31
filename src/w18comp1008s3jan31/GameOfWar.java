@@ -98,16 +98,28 @@ public class GameOfWar
         //both players have enough cards, put the cards in the war pile
         //and play another hand
         
-        
+        //each player adds 3 cards to the warPile
         for (int i=1; i<=3 ; i++)
         {
             warPile.add(p1Hand.remove(0));
             warPile.add(p2Hand.remove(0));
         }
-        
-        
+        playHand(warPile);      
     }
     
+    /**
+     * This will return a String showing the current status of the game
+     */
+    public String getStatus()
+    {
+        String p1Status = String.format("P1 # of cards: %d card: %s", 
+                                        p1Hand.size(), p1Hand.get(0));
+        
+        String p2Status = String.format("P2 # of cards: %d card: %s", 
+                                        p2Hand.size(), p2Hand.get(0));
+        
+        return p1Status + "   " + p2Status + "\n";
+    }
 }   //end of the class
 
 

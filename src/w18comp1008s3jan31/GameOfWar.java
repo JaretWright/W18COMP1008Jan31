@@ -56,6 +56,8 @@ public class GameOfWar
      */
     public void playHand(ArrayList<Card> warPile)
     {
+        System.out.println(getStatus());
+        
         Card p1Card = p1Hand.remove(0);
         Card p2Card = p2Hand.remove(0);
         
@@ -76,6 +78,7 @@ public class GameOfWar
             return;
         }
         //Steve yells WAR!!!
+        System.out.println("~~~~~~~~~~~WAR!!~~~~~~~~~~~~~");
         //check if player 1 has enough cards for war.  If not, p2 wins all 
         //the cards
         warPile.add(p1Card);
@@ -118,7 +121,7 @@ public class GameOfWar
         String p2Status = String.format("P2 # of cards: %d card: %s", 
                                         p2Hand.size(), p2Hand.get(0));
         
-        return p1Status + "   " + p2Status + "\n";
+        return p1Status + "   " + p2Status;
     }
 }   //end of the class
 

@@ -64,17 +64,17 @@ public class GameOfWar
         //player 1 wins
         if (p1Card.getValue() > p2Card.getValue())
         {
-            p1Hand.add(p1Card);
-            p1Hand.add(p2Card);  //p1 won this card from player 2
-            p1Hand.addAll(warPile); //add the warPile
+            p1Hand.add(p1Hand.size(),p1Card);
+            p1Hand.add(p1Hand.size(),p2Card);  //p1 won this card from player 2
+            p1Hand.addAll(p1Hand.size(),warPile); //add the warPile
             return;
         }
         //check if player 2 won
         if (p2Card.getValue() > p1Card.getValue())
         {
-            p2Hand.add(p1Card);
-            p2Hand.add(p2Card);  //p1 won this card from player 2
-            p2Hand.addAll(warPile); //add the warPile
+            p2Hand.add(p1Hand.size(),p1Card);
+            p2Hand.add(p1Hand.size(),p2Card);  //p1 won this card from player 2
+            p2Hand.addAll(p1Hand.size(),warPile); //add the warPile
             return;
         }
         //Steve yells WAR!!!
